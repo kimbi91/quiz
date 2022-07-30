@@ -1,7 +1,7 @@
 package hu.progmatic.quiz.model;
 
 public class SingleChoiceQuestion {
-    private long id;
+    private Long id;
 
     private String question;
 
@@ -18,8 +18,7 @@ public class SingleChoiceQuestion {
     public SingleChoiceQuestion() {
     }
 
-    public SingleChoiceQuestion(long id, String question, int answer, String optionA, String optionB, String optionC, String optionD) {
-        this.id = id;
+    public SingleChoiceQuestion(String question, int answer, String optionA, String optionB, String optionC, String optionD) {
         this.question = question;
         this.answer = answer;
         this.optionA = optionA;
@@ -28,11 +27,11 @@ public class SingleChoiceQuestion {
         this.optionD = optionD;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
