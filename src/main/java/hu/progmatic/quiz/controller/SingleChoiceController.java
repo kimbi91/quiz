@@ -20,7 +20,6 @@ public class SingleChoiceController {
     @GetMapping("/singlechoices")
     public String getSingleChoiceQuestions(Model model) {
         List<SingleChoiceQuestion> questions = singleChoiceService.getAll();
-
         model.addAttribute("questions", questions);
 
         return "singlechoices";

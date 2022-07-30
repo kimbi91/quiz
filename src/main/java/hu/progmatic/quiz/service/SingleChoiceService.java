@@ -18,6 +18,8 @@ public class SingleChoiceService {
     public SingleChoiceService() {
         SingleChoiceQuestion question1 = new SingleChoiceQuestion("Mi Magyarország fővárosa?", 1, "Budapest", "Sopron", "Győr", "Debrecen");
         SingleChoiceQuestion question2 = new SingleChoiceQuestion("Mi Németország fővárosa?", 2, "München", "Berlin", "Köln", "Frankfurt am Main");
+        saveQuestion(question1);
+        saveQuestion(question2);
     }
 
     public List<SingleChoiceQuestion> getAll() {
