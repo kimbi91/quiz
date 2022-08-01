@@ -1,7 +1,6 @@
 package hu.progmatic.quiz.controller;
 
 import hu.progmatic.quiz.model.FreeChoiceQuestion;
-import hu.progmatic.quiz.model.SingleChoiceQuestion;
 import hu.progmatic.quiz.service.FreeChoiceService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
