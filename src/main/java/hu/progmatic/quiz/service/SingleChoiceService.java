@@ -1,42 +1,33 @@
 package hu.progmatic.quiz.service;
 
 import hu.progmatic.quiz.model.SingleChoiceQuestion;
+import hu.progmatic.quiz.repository.SingleChoiceRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 @Service
 public class SingleChoiceService {
+    private SingleChoiceRepository repository;
 
     private long counter = 0;
 
     Map<Long, SingleChoiceQuestion> questions = new TreeMap<>();
 
-    public SingleChoiceService() {
-        SingleChoiceQuestion question1 = new SingleChoiceQuestion("Mi Magyarország fővárosa?", 1, "Budapest", "Sopron", "Győr", "Debrecen");
-        SingleChoiceQuestion question2 = new SingleChoiceQuestion("Mi Németország fővárosa?", 2, "München", "Berlin", "Köln", "Frankfurt am Main");
-        saveQuestion(question1);
-        saveQuestion(question2);
+    public SingleChoiceService(SingleChoiceRepository repository) {
+        this.repository = repository;
     }
 
     public List<SingleChoiceQuestion> getAll() {
-        return new ArrayList<>(questions.values());
+        return new ArrayList<>((Collection) repository.findAll());
     }
 
     public SingleChoiceQuestion getById(Long id) {
-        return questions.get(id);
+        return repository.findById(id).get();
     }
 
     public SingleChoiceQuestion saveQuestion(SingleChoiceQuestion question) {
-        if (question.getId() == null) {
-            counter++;
-            question.setId(counter);
-        }
-
-        questions.put(question.getId(), question);
+        repository.save(question);
 
         return question;
     }
