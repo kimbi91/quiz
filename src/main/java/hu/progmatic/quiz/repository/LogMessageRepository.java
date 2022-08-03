@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface LogMessageRepository extends CrudRepository<LogMessage, Long> {
 
-  //  List<LogMessage> findAllByOrderByMessage();
+  //  List<LogMessage> findAllByOrderByMessage(); a névben szereplő utasitások fognak lefutni az adatbázisban
 }
